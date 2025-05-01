@@ -1,0 +1,17 @@
+import random
+
+target = random.randint(1, 100)
+
+for _ in range(5):
+    guess = input("Guess a number (1-100): ")
+    
+    try:
+        guess = int(guess)
+        if guess == target:
+            print("Correct!")
+            break
+        print("Too high!" if guess > target else "Too low!")
+    except ValueError:
+        print("Invalid input")
+
+print(f"The number was {target}")
